@@ -15,7 +15,7 @@ const UserLoans = () => {
             } catch (error) {
                 setError('Failed to fetch loans. Please try again.');
             } finally {
-                setLoading(false); // Hide loading once data is fetched
+                setLoading(false);
             }
         };
 
@@ -52,6 +52,7 @@ const UserLoans = () => {
                     <ul>
                         {loans.map((loan) => {
                             const pendingRepayments = getPendingRepayments(loan.repayments);
+                            console.log(pendingRepayments);
                             const fullyPaid = isLoanFullyPaid(loan.repayments);
                             return (
                                 <li key={loan._id} className="mb-4">
