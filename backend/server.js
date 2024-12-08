@@ -19,7 +19,7 @@ app.use(
 );
 app.use(express.json());
 
-app.get("/", (req, res) => res.send("API is running..."));
+// app.get("/", (req, res) => res.send("API is running..."));
 app.use("/api/loans", loanRoutes);
 app.use("/api/users", authRoutes);
 
