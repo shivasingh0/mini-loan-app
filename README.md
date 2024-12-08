@@ -73,3 +73,6 @@ This is a mini loan application built using the MERN stack (MongoDB, Express.js,
 4. View user loans at `/loans`.
 5. Make loan repayments at `/repay-loan/:id`.
 
+## Postman Collection
+https://bold-astronaut-330518.postman.co/workspace/My-Public-Workspace~addd864d-9c5e-41a4-bb9d-d2c6686fb6c3/collection/31826553-862d4508-c989-4a22-90fb-d7bce0a25ecc?action=share&creator=31826553&active-environment=31826553-45540bfd-2242-4ef1-a1b1-15b517f30cd3
+
