@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import axiosInstance from '../axiosInstance/axiosInstance';
+import { useNavigate } from 'react-router-dom';
 
 const Register = ({ history }) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const navigate = useNavigate();
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -15,10 +18,12 @@ const Register = ({ history }) => {
                 }
             };
             const { data } = await axiosInstance.post('/users/register', { name, email, password }, config);
-            localStorage.setItem('token', data?.token);
-            history.push('/apply-loan');
+            if (data) {
+                navigate('/login');
+                alert('User registered successfully');
+            }
         } catch (error) {
-            console.error(error.response.data.message);
+            console.error(error);
         }
     };
 

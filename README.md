@@ -16,25 +16,27 @@ This is a mini loan application built using the MERN stack (MongoDB, Express.js,
 ### Prerequisites
 
 - Node.js
-- npm or yarn
+- npm
 - MongoDB
 
-### Backend Setup
+### Project Setup
 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/mini-loan-app.git
+    git clone https://github.com/shivasingh0/mini-loan-app
     cd mini-loan-app
     ```
 
-2. Install dependencies:
+### Backend Setup
+
+1. Install dependencies for Backend:
 
     ```bash
     npm install
     ```
 
-3. Create a `.env` file in `mini-loan-app` directory with the following content:
+2. Create a `.env` file in `mini-loan-app` directory with the following content:
 
     ```env
     PORT=5000
@@ -42,7 +44,7 @@ This is a mini loan application built using the MERN stack (MongoDB, Express.js,
     JWT_SECRET=your_jwt_secret
     ```
 
-4. Start the backend server:
+3. Start the backend server:
 
     ```bash
     npm start
@@ -71,26 +73,3 @@ This is a mini loan application built using the MERN stack (MongoDB, Express.js,
 4. View user loans at `/loans`.
 5. Make loan repayments at `/repay-loan/:id`.
 
-## Project Structure
-
-mini-loan-app/
-├── backend/
-│   ├── config/
-│   │   └── db.js
-│   ├── controllers/
-│   │   └── loanController.js
-│   ├── models/
-│   │   └── Loan.js
-│   ├── routes/
-│   │   └── loanRoutes.js
-│   ├── middleware/
-│   │   └── authMiddleware.js
-│   ├── server.js
-|   ├── package.json
-|   ├── .env
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   ├── tailwind.config.js
-│   └── ...
-└── README.md

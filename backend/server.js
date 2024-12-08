@@ -8,9 +8,6 @@ const path = require("path");
 
 dotenv.config();
 
-// const __dirname = path.resolve();
-// console.log(__dirname);
-
 connectDB();
 
 const app = express();

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../axiosInstance/axiosInstance";
 
 const Login = () => {
@@ -20,14 +20,9 @@ const Login = () => {
 
       navigate("/");
 
-      // Redirect based on admin status
-      // if (data.isAdmin) {
-      //   navigate("/admin");
-      // } else {
-      //   navigate("/apply-loan");
-      // }
+
     } catch (error) {
-      console.error(error.response?.data?.message || "Login failed");
+      console.error(error || "Login failed");
     }
   };
 
@@ -71,6 +66,12 @@ const Login = () => {
       >
         Login
       </button>
+      <Link
+        to="/register"
+        className="w-full"
+      >
+        If you don't have an account, <span className="text-blue-500">Register</span>
+      </Link>
     </form>
   );
 };

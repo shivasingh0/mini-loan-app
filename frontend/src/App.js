@@ -6,7 +6,7 @@ import LoanForm from "./components/LoanForm";
 import UserLoans from "./components/UserLoans";
 import RepaymentForm from "./components/RepaymentForm";
 import ProtectedRoute from "./components/ProtectedRoute";
-import { AuthProvider } from "./context/AuthContext";
+// import { AuthProvider } from "./context/AuthContext";
 import AdminDashboard from "./components/AdminDashboard";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -14,7 +14,6 @@ import Home from "./components/Home";
 const App = () => {
   return (
     <Router>
-      <AuthProvider>
         <Navbar /> {/* Add Navbar here */}
         <div className="container mx-auto px-4">
           <h1 className="text-2xl font-bold my-4">Mini Loan App</h1>
@@ -54,10 +53,13 @@ const App = () => {
             />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            } />
           </Routes>
         </div>
-      </AuthProvider>
     </Router>
   );
 };
